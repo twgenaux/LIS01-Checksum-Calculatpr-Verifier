@@ -1,4 +1,4 @@
-# Calculate and Verify LIS01 Low-Level Protocol Frame Checksums
+# Calculates and Verififies LIS01 Low-Level Protocol Frame Checksums
 
 
 
