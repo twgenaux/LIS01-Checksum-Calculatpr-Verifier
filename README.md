@@ -6,7 +6,7 @@
 
 
 
-The *LIS1-A / ASTM E1381 Frame Checksum Calculator can be used to calculate or verify the checksum of an LIS01 frame.
+The LIS1-A / ASTM E1381 Frame Checksum Calculator can be used to calculate or verify the checksum of an LIS01 frame.
 
 The LIS02 specification describes the structure and content of messages sent between an instrument and a Laboratory Information System (LIS). These messages are used to send orders, receive results, and exchange information with each other. They can be exchanged in network shared folders, serial communication, and TCP/IP protocols.
 
