@@ -8,11 +8,9 @@
 
 The *LIS1-A / ASTM E1381 Frame Checksum Calculator can be used to calculate or verify the checksum of an LIS01 frame.
 
+The LIS02 specification describes the structure and content of messages sent between an instrument and a Laboratory Information System (LIS). These messages are used to send orders, receive results, and exchange information with each other. They can be exchanged in network shared folders, serial communication, and TCP/IP protocols.
 
-
-The LIS02 specification describes the structure and content of messages sent between an instrument and a Laboratory Information System (LIS). These messages are used to send orders, receive results, and query each other for information. They can be exchanged in network shared folders, serial communication, and TCP/IP protocols.
-
-Below is an LIS02 Message containing four records; Header (H), Patient (P), Order (O), and End of Message (L).
+Below is an LIS02 Message containing four records: Header (H), Patient (P), Order (O), and End of Message (L).
 
 ```
 H|\^&|||Mini LIS||||||||LIS2-A|20210309142633<CR>
@@ -21,17 +19,13 @@ O|1|SID305||ABO|N|20210309142633|||||N||||CENTBLOOD<CR>
 L|1|N<CR>
 ```
 
-LIS01 is a specification for a low-level protocol that can exchange LIS02 messages through serial communication and TCP/IP. The protocol is implemented to allow bidirectional communication, where each system takes turns sending and receiving messages. LIS02 messages are sent one line (called a record) at a time. The LIS01 protocol is not limited to just LIS02 messages; it can send any text-based message that its protocol can support. For LIS02 content, an LIS01 message is defined as one LIS02 record.
+LIS01 is a specification for a low-level protocol that enables the exchange of LIS02 messages via serial communication and TCP/IP. The protocol is implemented to allow bidirectional communication, where each system takes turns sending and receiving messages. LIS02 messages are sent one line (called a record) at a time. The LIS01 protocol is not limited to just LIS02 messages; it can send any text-based message that its protocol can support. For LIS02 content, an LIS01 message is defined as one LIS02 record.
 
 Each LIS02 record is sent in an LIS01 frame that starts with an \<STX> and ends with a \<CR>\<LF> sequence. The message (record) sits between the \<STX> and the \<ETX>. Each frame contains a checksum, which is used to validate that the message has not been corrupted in transit. The checksum lies between the  \<ETX> and \<CR>\<LF> sequence.
 
 ```
 <STX><LIS02 Record><ETX><Two digit hexidecimal Checksum><CR><LF>
 ```
-
-
-
-
 
 ## References
 
